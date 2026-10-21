@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*Titulo y fondo de la web*/
+
+main {
+  background: linear-gradient(225deg, #1f1f1f 0%, #0d0d0d 5%, #050505 100%);
+  min-height: 100vh;
+  min-width: 100vh;
+}
+
+.titleWeb {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-right: 30px;
+  padding-left: 30px;
+  line-height: 1;
+}
+
+.titleWeb span {
+  color: #2a2a2a;
+  font-size: clamp(3rem, 13vw, 320px);
+  font-family: "Anton", sans-serif;
+  font-weight: 800;
+  padding: 0;
+  margin: 0;
+}
+
+/*Sección de contenido con nav y párrafo*/
+
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+
+/*Navegador entre secciones*/
+
+.navigator a {
+  text-decoration: none;
+  color: #dcdcdc;
+  font-family: "Open Sans", sans-serif;
+}
+
+.navigator a:visited {
+  color: #dcdcdc;
+}
+
+#readme {
+  color: #b1ac77;
+}
+
+#readme:visited {
+  color: #b1ac77;
+}
+
+#readme:hover {
+  color: #050505;
+}
+
+.navigator h2 {
+  color: #838383;
+  font-family: "Open Sans", sans-serif;
+}
+
+.navigator a:hover {
+  color: #050505;
+  background-color: #ffffffdc;
+}
+
+.navigator-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.navigator-list a {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/*Frase de la main web*/
+
+.main-phrase {
+  color: #838383;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 5px;
+  font-family: "Open Sans", sans-serif;
+}
