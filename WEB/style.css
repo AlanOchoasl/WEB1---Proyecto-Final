@@ -94,3 +94,16 @@ main {
   gap: 5px;
   font-family: "Open Sans", sans-serif;
 }
+
+.main-phrase h2 {
+  font-size: 38px;
+  color: #b1ac77;
+}
+
+.phrase-p {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  font-size: 18px;
+  gap: 3px;
+}
