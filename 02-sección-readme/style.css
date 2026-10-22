@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(225deg, #1f1f1f 0%, #0d0d0d 5%, #050505 100%);
+  min-height: 100vh;
+  min-width: 100vh;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* TITULO DE SECCIÓN Y BOTÓN PARA NAVEGAR AL MAIN */
+
+.readme-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.readme-header h1 {
+  font-family: "Anton", sans-serif;
+  font-weight: 800;
+  color: #2a2a2a;
+  font-size: 100px;
+  line-height: 0.8;
+  margin: 20px 0 0 20px;
+}
+
+.readme-header p {
+  font-family: "Open Sans", sans-serif;
+  color: #dcdcdc;
+}
+
+.readme-header a {
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+  color: #dcdcdc;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.readme-header a:visited {
+  color: #dcdcdc;
+}
+
+.readme-header a:hover {
+  background-color: #dcdcdc;
+  color: #050505;
+}
+
+.info-header {
+  display: flex;
+  flex-direction: row;
+  margin: 8px 0 0 30px;
+  gap: 200px;
+}
+
+/* Grid principal de la web */
+
+.main-grid {
+  display: flex;
+  justify-content: space-between;
+  margin: 100px 150px 0 150px;
+}
+
+.left-section {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.contact-info h2 {
+  color: #b1ac77;
+}
+
+.contact-info p {
+  color: #dcdcdc;
+}
+
+.label-title {
+  color: #dcdcdc;
+}
+
+.contact-form div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.campo textarea,
+.campo input {
+  width: 100%;
+  max-width: 230px;
+  border: 0;
+  border-bottom: 1px solid #dcdcdc;
+  background: transparent;
+  color: #dcdcdc;
+  font: inherit;
+  margin: 10px 0 10px 0;
+}
+
+.contact-form button {
+  background-color: #050505;
+  color: #dcdcdc;
+  border: 1px solid #dcdcdc;
+  padding: 10px;
+  font-size: 10px;
+}
+
+.contact-form button:hover {
+  background-color: #dcdcdc;
+  color: #050505;
+}
+
+/* Columna Derecha */
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.info-section p {
+  color: #dcdcdc;
+}
+
+.items-title {
+  color: #b1ac77;
+}
+
+.items-web {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+}
+
+.items-web dt,
+dd {
+  margin: 0;
+  padding: 4px 0;
+  border-bottom: 1px solid #838383;
+}
+
+.items-web dt {
+  color: #dcdcdc;
+}
+
+.items-web dd {
+  color: #838383;
+  text-align: right;
+}
+
+.guide-web h2 {
+  color: #b1ac77;
+}
