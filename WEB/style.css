@@ -84,6 +84,12 @@ main {
   border-radius: 5px;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 /*Frase de la main web*/
 
 .main-phrase {
