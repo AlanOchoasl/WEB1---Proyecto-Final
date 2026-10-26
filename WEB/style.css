@@ -6,6 +6,10 @@
 
 /*Titulo y fondo de la web*/
 
+body {
+  cursor: crosshair;
+}
+
 main {
   background: linear-gradient(225deg, #1f1f1f 0%, #0d0d0d 5%, #050505 100%);
   min-height: 100vh;
@@ -63,14 +67,10 @@ main {
   color: #050505;
 }
 
-.navigator h2 {
-  color: #838383;
-  font-family: "Open Sans", sans-serif;
-}
-
 .navigator a:hover {
   color: #050505;
   background-color: #ffffffdc;
+  transition-duration: 0.4s;
 }
 
 .navigator-list {
@@ -88,6 +88,17 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+.navigator-list a span {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.navigator a:hover span {
+  opacity: 1;
+  visibility: visible;
 }
 
 /*Frase de la main web*/
