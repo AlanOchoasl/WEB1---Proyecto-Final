@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  background: linear-gradient(225deg, #1f1f1f 0%, #0d0d0d 5%, #050505 100%);
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* estilos cabecera */
+
+.covers-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.covers-header h1 {
+  font-family: "Anton", sans-serif;
+  font-weight: 800;
+  color: #2a2a2a;
+  font-size: 100px;
+  line-height: 0.8;
+  margin: 20px 0 0 20px;
+}
+
+.info-header {
+  color: #dcdcdc;
+  font-family: "Open Sans", sans-serif;
+}
+
+.info-header {
+  display: flex;
+  gap: 250px;
+  margin: 10px 0 0 20px;
+  border-bottom: #8383832a solid 0.7px;
+}
+
+.info-header a {
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 5px;
+  color: dcdcdc;
+}
+
+.info-header a:visited {
+  color: #dcdcdc;
+}
+
+.info-header a:hover {
+  background: #dcdcdc;
+  color: #050505;
+  transition-duration: 0.4s;
+}
+
+/* portadas */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  padding: 24px 20px;
+  margin-top: 100px;
+
+  box-sizing: border-box;
+  gap: 20px;
+  width: 100%;
+}
+
+/* botones del carrousel */
+
+.carrousel-buttons {
+  display: flex;
+  justify-content: flex-end;
+
+  box-sizing: border-box;
+  gap: 10px;
+}
+
+.carrousel-buttons button {
+  text-decoration: none;
+  background-color: transparent;
+  color: #dcdcdc;
+  border: 1px solid #dcdcdc;
+  padding: 5px 3px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #dcdcdc;
+    color: #050505;
+    transition: 0.4s;
+  }
+}
+
+/* carrousel */
+
+.carrousel {
+  display: flex;
+  gap: 20px;
+
+  overflow: hidden;
+  flex: 1;
+}
+
+.cover {
+  flex: 0 0 320px;
+  text-align: center;
+}
+
+.cover img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+
+  display: block;
+}
+
+.cover h4 {
+  font-size: 16px;
+  margin-top: 12px;
+  color: #dcdcdc;
+}
