@@ -4,77 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>README</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/02-sección-readme/style.css" />
   </head>
   <body>
-    <!--cabecera con el título, lugar y botón para volver a la página principal-->
-    <header class="readme-header">
-      <h1>README</h1>
-      <div class="info-header">
-        <p>SAN LUIS, ARGENTINA</p>
-        <a href="/WEB/index.html">VOLVER</a>
-      </div>
-    </header>
-    <!--sección para contactar-->
-    <main class="main-grid">
-      <section class="left-section">
-        <div class="contact-info">
-          <h2>CONTACTO</h2>
-          <p>
-            Para encargos de
-            <b
-              >portadas, afiches o edición de <br />
-              fotos</b
-            >, completá el formulario. Respondo en 48 horas.
-          </p>
+    <main>
+      <!--cabecera con el título, lugar y botón para volver a la página principal-->
+      <header class="readme-header">
+        <h1>README</h1>
+        <div class="info-header">
+          <p>SAN LUIS, ARGENTINA</p>
+          <a href="/WEB/index.html">VOLVER</a>
         </div>
-        <form action="" class="contact-form">
-          <div class="campo">
-            <label class="label-title" for="nombre">NOMBRE</label>
-            <input type="text" id="nombre" name="nombre" required />
-          </div>
-          <div class="campo">
-            <label class="label-title" for="email">EMAIL</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-          <div class="campo">
-            <label class="label-title" for="mensaje">MENSAJE</label>
-            <textarea name="mensaje" id="mensaje" rows="4"></textarea>
-          </div>
-          <button type="submit">ENVIAR</button>
-        </form>
-      </section>
+      </header>
+
       <!--sección con información acerca de toda la web-->
-      <section class="info-section">
-        <p>
-          <span class="start-p">Else Where</span> es un archivo abierto. Reúne
-          mi trabajo <br />
-          como artista digital y las cosas que miro, escucho y <br />
-          hago cuando no estoy trabajando. <br />
-          <br />
-          No sigue un orden cronológico. Cada sección es una <br />
-          puerta: entrás por la que te llame la atención y <br />
-          salís por otra.
-        </p>
-        <div>
-          <h2 class="items-title">QUÉ VAS A ENCONTRAR</h2>
-          <dl class="items-web">
-            <dt>SONG COVERS</dt>
-            <dd>portadas e ilustraciónes para música</dd>
 
-            <dt>MOVIES</dt>
-            <dd>películas que me quedaron dando vueltas</dd>
-
-            <dt>MUSIC</dt>
-            <dd>discos y listas que escucho en loop</dd>
-          </dl>
-        </div>
-        <div class="guide-web">
-          <h2>COMO RECORRERLA</h2>
+      <section class="main-content">
+        <h1 class="title">
+          <span class="eye-catching">QUE ES</span>ELSE WHERE
+        </h1>
+        <div class="paragraphs">
+          <p>UN PORTFOLIO DE PORTADAS MUSICALES Y ARTE VISUAL</p>
           <p>
-            Usá el menú o bajá. Pasá el mouse sobre las portadas para <br />
-            verlas a color. Si algo te inspiraese es el punto.
+            Soy diseñador freelance y acá reúno mi trabajo:<br />
+            portadas pensadas para que cada disco, sencillo<br />
+            o proyecto se vea como suena. Este es el punto de <br />
+            partida, y el espacio va a crecer con nuevos <br />
+            proyectos a futuro.
           </p>
+          <p>¿Ya te decidiste? Podés contactarme acá abajo</p>
+        </div>
+        <div class="buttons-sections">
+          <a class="btn-contact" href="/03-sección-contacto/contact.html"
+            >CONTACTAME</a
+          >
+          <a class="btn-portfolio" href="/01-sección-portadas/covers.html"
+            >PORTFOLIO</a
+          >
         </div>
       </section>
     </main>
