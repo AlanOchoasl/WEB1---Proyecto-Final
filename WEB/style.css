@@ -4,11 +4,17 @@
   box-sizing: border-box;
 }
 
-/*Titulo y fondo de la web*/
-
-body {
-  cursor: crosshair;
+/* paleta de color y tipografias del proyecto */
+:root {
+  --color-titulos: #dcdcdc;
+  --color-subtitulos: #838383;
+  --color-fondo: #000000;
+  --resaltador: #b1ac77;
+  --fuente-titulos: "Anton", Impact, "Arial Narrow", sans-serif;
+  --fuente-texto: Consolas, "SF Mono", Menlo, "DejaVu Sans Mono", monospace;
 }
+
+/*Titulo y fondo de la web*/
 
 main {
   background: linear-gradient(225deg, #1f1f1f 0%, #0d0d0d 5%, #050505 100%);
@@ -26,12 +32,13 @@ main {
 }
 
 .titleWeb span {
-  color: #2a2a2a;
-  font-size: clamp(3rem, 13vw, 320px);
-  font-family: "Anton", sans-serif;
+  color: var(--color-titulos);
+  font-size: clamp(3rem, 16vw, 320px);
+  font-family: var(--fuente-titulos);
   font-weight: 800;
   padding: 0;
   margin: 0;
+  letter-spacing: 0.6rem;
 }
 
 /*Sección de contenido con nav y párrafo*/
@@ -41,36 +48,39 @@ main {
   justify-content: space-between;
   padding-right: 50px;
   padding-left: 50px;
+  box-sizing: border-box;
 }
 
 /*Navegador entre secciones*/
 
 .navigator a {
   text-decoration: none;
-  color: #dcdcdc;
-  font-family: "Open Sans", sans-serif;
+  color: var(--color-titulos);
+  font-family: var(--fuente-texto);
+  font-size: 1.5rem;
 }
 
 .navigator a:visited {
-  color: #dcdcdc;
+  color: var(--color-titulos);
 }
 
 #readme {
-  color: #b1ac77;
+  color: var(--resaltador);
+  font-size: 1.5rem;
 }
 
 #readme:visited {
-  color: #b1ac77;
+  color: var(--resaltador);
 }
 
 #readme:hover {
-  color: #050505;
+  color: var(--color-fondo);
 }
 
 .navigator a:hover {
-  color: #050505;
-  background-color: #ffffffdc;
-  transition-duration: 0.4s;
+  color: var(--color-fondo);
+  background-color: var(--color-titulos);
+  transition-duration: 0.6s;
 }
 
 .navigator-list {
@@ -104,17 +114,17 @@ ul {
 /*Frase de la main web*/
 
 .main-phrase {
-  color: #838383;
+  color: var(--color-subtitulos);
   display: flex;
   flex-direction: column;
   align-items: end;
   gap: 5px;
-  font-family: "Open Sans", sans-serif;
+  font-family: var(--fuente-texto);
 }
 
 .main-phrase h2 {
   font-size: 38px;
-  color: #b1ac77;
+  color: var(--resaltador);
 }
 
 .phrase-p {
