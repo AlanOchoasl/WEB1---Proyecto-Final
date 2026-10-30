@@ -34,19 +34,19 @@ main {
 .covers-header h1 {
   font-family: var(--fuente-titulos);
   font-weight: 800;
-  color: var(--color-sections-titles);
-  font-size: 8rem;
-  letter-spacing: 0.3rem;
+  color: var(--color-subtitulos);
+  font-size: 6rem;
+  letter-spacing: 0.2rem;
   line-height: 0.8;
   margin: 20px 0 0 20px;
 }
 
 .info-header {
   display: flex;
-  gap: 190px;
-  margin: 20px 0 0 20px;
+  gap: 120px;
+  margin: 15px 0 10px 25px;
   font-family: var(--fuente-texto);
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .btn-contact {
@@ -65,15 +65,13 @@ main {
 .btn-back {
   color: var(--color-titulos);
   background-color: transparent;
-  border: 1px solid var(--color-titulos);
   text-decoration: none;
-  padding: 2px 6px 2px 6px;
+  border-radius: 10px;
+  padding: 4px 8px 4px 8px;
   box-sizing: border-box;
-  border-radius: 12px;
   &:hover {
-    color: var(--color-fondo);
     background-color: var(--resaltador);
-    border: 1px solid var(--resaltador);
+    color: var(--color-fondo);
     transition: 0.6s;
   }
 }
