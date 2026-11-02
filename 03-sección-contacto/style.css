@@ -11,6 +11,7 @@
   --color-sections-titles: #2a2a2a;
   --color-fondo: #000000;
   --resaltador: #b1ac77;
+  --error-inputs: #ac4747;
   --fuente-titulos: "Anton", Impact, "Arial Narrow", sans-serif;
   --fuente-texto: Consolas, "SF Mono", Menlo, "DejaVu Sans Mono", monospace;
 }
@@ -277,4 +278,19 @@ textarea.input-form {
 .to-social:hover {
   background-color: var(--resaltador);
   border-radius: 50px;
+}
+
+#error-name,
+#error-email,
+#error-phone,
+#error-text-area {
+  color: var(--error-inputs);
+  display: none;
+  font-size: 1rem;
+}
+
+#resume p {
+  color: var(--color-titulos);
+  font-size: 1rem;
+  font-family: var(--fuente-texto);
 }
