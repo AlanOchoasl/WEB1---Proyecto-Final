@@ -134,3 +134,51 @@ ul {
   font-size: 1.5rem;
   gap: 3px;
 }
+
+/* responsive */
+
+@media (max-width: 768px) {
+  main {
+    width: 100%;
+    min-width: 0;
+    min-height: 100vh;
+  }
+
+  .titleWeb {
+    gap: 12px;
+    padding-inline: 16px;
+  }
+
+  .titleWeb span {
+    font-size: clamp(3rem, 15vw, 7.5rem);
+    letter-spacing: clamp(0.05rem, 1vw, 0.6rem);
+  }
+
+  .main-content {
+    flex-direction: column;
+    gap: clamp(32px, 8vh, 72px);
+    padding: 32px 20px;
+  }
+
+  .navigator a {
+    font-size: clamp(1rem, 3vw, 1.4rem);
+  }
+
+  .navigator-list a span {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .main-phrase {
+    align-items: flex-start;
+  }
+
+  .main-phrase h2 {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .phrase-p {
+    align-items: flex-start;
+    font-size: clamp(1rem, 4vw, 11.5rem);
+  }
+}
