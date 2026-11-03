@@ -59,3 +59,4 @@ Notas
 Autor
 Alan Ochoa — Diseño de portadas y arte visual
 GitHub (https://github.com/AlanOchoasl)
+Link de pages : https://alanochoasl.github.io/WEB1---Proyecto-Final/
