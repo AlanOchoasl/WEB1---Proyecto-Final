@@ -295,3 +295,75 @@ textarea.input-form {
   font-size: 1rem;
   font-family: var(--fuente-texto);
 }
+
+/* responsive */
+
+@media (max-width: 900px) {
+  .main-content {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .main-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: clamp(40px, 7vw, 80px);
+    padding: 32px 24px;
+  }
+
+  .eye-catching-info h2 {
+    font-size: clamp(3rem, 8vw, 5rem);
+  }
+
+  .main-form {
+    width: min(100%, 700px);
+    margin-inline: auto;
+  }
+
+  .footer-contact {
+    flex-wrap: wrap;
+    grid-auto-flow: 24px;
+    padding: 20px 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-contact h1 {
+    font-size: clamp(3.2rem, 14vw, 5rem);
+    margin-left: 16px;
+  }
+
+  .info-header {
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-inline: 16px;
+  }
+
+  .main-section {
+    padding: 28px 16px;
+  }
+
+  .eye-catching-info h2 {
+    font-size: clamp(2.4rem, 11vw, 4rem);
+    letter-spacing: 0.08rem;
+  }
+
+  .table-a a {
+    font-size: clamp(1.2rem, 6vw, 2rem);
+    overflow-wrap: anywhere;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .footer-contact {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .social-media {
+    flex-wrap: wrap;
+  }
+}
