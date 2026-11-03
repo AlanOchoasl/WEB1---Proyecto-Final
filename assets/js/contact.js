@@ -1,101 +1,183 @@
+const formulario = document.querySelector("#form");
 
-function validarUsuario() {
-    const usuario = document.querySelector("#nombre");
-    const alertaNombre = document.querySelector("#error-name");
-    const valor = usuario.value.trim();
+const campos = [
+  document.querySelector("#nombre"),
+  document.querySelector("#apellido"),
+  document.querySelector("#telefono"),
+  document.querySelector("#email"),
+  document.querySelector("#descripcion")
+];
 
-    if (valor === '' || valor.length < 3 || valor.length > 100){
-        alertaNombre.style.display = "block";
-        return false;
-    }else {
-        alertaNombre.style.display = "none";
-        return true;
+const camposVisitados = new Set ();
+
+function validarCampo(campo) {
+  const valor = campo.value.trim();
+
+  switch (campo.id) {
+    case "nombre":
+      if (valor === "") return "El nombre es obligatorio.";
+      if (valor.length < 2) return "Ingresá al menos 2 caracteres.";
+      if (valor.length > 60) return "Máximo 60 caracteres.";
+      break;
+
+    case "apellido":
+      if (valor === "") return "";
+
+      if (valor.length < 2) return "Ingresá al menos 2 caracteres.";
+      if (valor.length > 60) return "Máximo 60 caracteres.";
+      break;
+
+    case "telefono": {
+      if (valor === "") return "El teléfono es obligatorio.";
+
+      const telefonoNormalizado = valor.replace(/[\s().-]/g, "");
+      const patron = /^(\d{10}|0\d{10}|\+549\d{10})$/;
+
+      if (!patron.test(telefonoNormalizado)) {
+        return "Ingresá un teléfono válido.";
+      }
+      break;
     }
+
+    case "email": {
+      if (valor === "") return "El email es obligatorio.";
+
+      const patron = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+      if (valor.length > 254 || !patron.test(valor)) {
+        return "Ingresá un correo electrónico válido.";
+      }
+      break;
+    }
+
+    case "descripcion":
+      if (valor === "") return "La descripción es obligatoria.";
+      if (valor.length < 10) return "Ingresá al menos 10 caracteres.";
+      if (valor.length > 250) return "Máximo 250 caracteres.";
+      break;
+  }
+
+  return "";
 }
 
-function validarTelefono (){
-    const telefono = document.querySelector("#telefono");
-    const alertaTelefono = document.querySelector("#error-phone");
-    const valor = telefono.value.trim();
-    const patron = /^(\d{10}|0\d{10}|\+549\d{10})$/;
+//mensajes de error de los campos
 
-    if (valor === "" || !patron.test(valor)){
-        alertaTelefono.style.display = "block";
-        return false;
-    }else {
-        alertaTelefono.style.display = "none"
-        return true;
-    }
+function mostrarError(campo, mensaje) {
+  limpiarError(campo);
+
+  const error = document.createElement("p");
+
+  error.id = `${campo.id}-error`;
+  error.classList.add("error-message");
+  error.textContent = mensaje;
+
+  campo.insertAdjacentElement("afterend", error);
+
+  campo.classList.add("input-error");
+  campo.setAttribute("aria-invalid", "true");
+  campo.setAttribute("aria-describedby", error.id);
 }
 
-function validarMail (){
-    const correo = document.querySelector("#email");
-    const alertaEmail = document.querySelector("#error-email");
-    const valor = correo.value.trim();
-    const patron = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+// funcion para eliminar el error
 
-    if (valor === '' || !patron.test(valor) || (valor.length > 254)){
-        alertaEmail.style.display = "block";
-        return false;
-    }else {
-        alertaEmail.style.display = 'none';
-        return true;
-    }
+function limpiarError(campo) {
+  const error = document.querySelector(`#${campo.id}-error`);
+
+  if (error) {
+    error.remove();
+  }
+
+  campo.classList.remove("input-error");
+  campo.removeAttribute("aria-invalid");
+  campo.removeAttribute("aria-describedby");
 }
 
-function validarDesc (){
-    const descripcion = document.querySelector("#descripcion");
-    const alertaDescripcion = document.querySelector("#error-text-area");
-    const valor = descripcion.value.trim();
+//validacion
 
-    if (valor === '' || valor.length > 250){
-        alertaDescripcion.style.display = "block";
-        return false;
-    }else {
-        alertaDescripcion.style.display = "none";
-        return true;
-    }
+function controlarCampo(campo) {
+  const mensaje = validarCampo(campo);
+
+  if (mensaje !== "") {
+    mostrarError(campo, mensaje);
+    return false;
+  }
+
+  limpiarError(campo);
+  return true;
 }
 
-const formulario = document.querySelector("#form")
+campos.forEach(campo => {
+  campo.addEventListener("blur", () => {
+    camposVisitados.add(campo);
+    controlarCampo(campo);
+  });
 
-formulario.addEventListener('submit', function(event){
-    event.preventDefault();
-
-    const usuarioValido = validarUsuario();
-    const mailValido = validarMail();
-    const descripcionValida = validarDesc();
-    const telefonoValido = validarTelefono();
-
-    if (usuarioValido && mailValido && descripcionValida && telefonoValido){
-        mostrarResumen();
-        formulario.reset();
+  campo.addEventListener("input", () => {
+    if (camposVisitados.has(campo)) {
+      controlarCampo(campo);
     }
-})
+  });
+});
 
-function mostrarResumen (){
-    const usuario = document.querySelector ("#nombre");
-    const telefono = document.querySelector ("#telefono");
-    const correo = document.querySelector ("#email");
-    const descripcion = document.querySelector ("#descripcion");
+formulario.addEventListener("submit", function(event) {
+  event.preventDefault();
 
-    const resumen = document.querySelector ("#resume");
+  let formularioValido = true;
+  let primerCampoInvalido = null;
 
-    resumen.innerHTML = "";
+  campos.forEach(campo => {
+    camposVisitados.add(campo);
 
-    const elementoNombre = document.createElement("p");
-    const elementoTelefono = document.createElement("p");
-    const elementoMail = document.createElement("p");
-    const elementoDescripcion = document.createElement("p");
+    const valido = controlarCampo(campo);
 
-    elementoNombre.textContent = "Nombre: " + usuario.value;
-    elementoTelefono.textContent = "Telefono: " + telefono.value;
-    elementoMail.textContent = "Correo: " + correo.value;
-    elementoDescripcion.textContent = "Descripcion: " + descripcion.value;
+    if (!valido) {
+      formularioValido = false;
 
-    resumen.appendChild(elementoNombre);
-    resumen.appendChild(elementoTelefono);
-    resumen.appendChild(elementoMail);
-    resumen.appendChild(elementoDescripcion);
-    
+      if (primerCampoInvalido === null) {
+        primerCampoInvalido = campo;
+      }
+    }
+  });
+
+  if (!formularioValido) {
+    primerCampoInvalido.focus();
+    return;
+  }
+
+  mostrarResumen();
+  formulario.reset();
+
+  campos.forEach(campo => {
+    limpiarError(campo);
+  });
+
+  camposVisitados.clear();
+});
+
+// resumen luego de enviar los datos
+
+function mostrarResumen() {
+  const usuario = document.querySelector("#nombre");
+  const apellido = document.querySelector("#apellido");
+  const telefono = document.querySelector("#telefono");
+  const correo = document.querySelector("#email");
+  const descripcion = document.querySelector("#descripcion");
+
+  const resumen = document.querySelector("#resume");
+
+  resumen.innerHTML = "";
+
+  const datos = [
+    "Nombre: " + usuario.value,
+    "Apellido: " + apellido.value,
+    "Teléfono: " + telefono.value,
+    "Correo: " + correo.value,
+    "Descripción: " + descripcion.value
+  ];
+
+  datos.forEach(dato => {
+    const elemento = document.createElement("p");
+    elemento.textContent = dato;
+    resumen.appendChild(elemento);
+  });
 }
