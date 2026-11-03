@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,75 +27,43 @@
       <!--cuerpo principal de la pagina-->
 
       <section class="container">
-        <div class="carrousel-buttons">
-          <button class="before-button" id="prev"><</button>
-          <button class="after-button" id="next">></button>
-        </div>
-
-        <!--portadas-->
-
-        <div class="carrousel">
-          <div class="cover">
+        <div
+          class="carrousel"
+          role="group"
+          aria-roledescription="carrusel"
+          aria-label="Portadas de canciones"
+        >
+          <div class="img-carrousel">
             <img
-              class="unpressed-button"
+              id="current-img"
+              class="current-img"
               src="../../assets/img/covers/BurnoutCover.webp"
-              alt="Burnout Portada"
+              alt="Portada de Burnout"
             />
-            <h4>Burnout</h4>
+            <p class="info-cover" aria-live="polite">
+              01 - Burnout <br />
+              Genero Jazz - portada de albúm completo
+            </p>
           </div>
 
-          <div class="cover">
-            <img
-              class="unpressed-button"
-              src="../../assets/img/covers/DeepFeelingsCover.webp"
-              alt="Deep Feelings Cover"
-            />
-            <h4>Deep Feelings</h4>
-          </div>
-
-          <div class="cover">
-            <img
-              class="unpressed-button"
-              src="../../assets/img/covers/LifeIsAMovieCover.webp"
-              alt="Life is a Movie Cover"
-            />
-            <h4>Life is a movie</h4>
-          </div>
-
-          <div class="cover">
-            <img
-              class="unpressed-button"
-              src="../../assets/img/covers/PostalCover.webp"
-              alt="Postal Cover"
-            />
-            <h4>Postal</h4>
-          </div>
-
-          <div class="cover">
-            <img
-              class="unpressed-button"
-              src="../../assets/img/covers/StarsCover.webp"
-              alt="Stars Cover"
-            />
-            <h4>Stars</h4>
-          </div>
-
-          <div class="cover">
-            <img
-              class="unpressed-button"
-              src="../../assets/img/covers/SummerCover.webp"
-              alt="Summer Cover"
-            />
-            <h4>Summer</h4>
-          </div>
-
-          <div class="cover">
-            <img
-              class="unpressed-button"
-              src="../../assets/img/covers/YWLYMCover.webp"
-              alt="You will lose your mind Cover"
-            />
-            <h4>You will lose your mind</h4>
+          <div class="carrousel-controls">
+            <button
+              type="button"
+              id="prev"
+              class="prev"
+              aria-label="ver portada anterior"
+            >
+              <
+            </button>
+            <p class="covers-count" id="covers-count">1 / 7</p>
+            <button
+              type="button"
+              id="next"
+              class="next"
+              aria-label="ver portada siguiente"
+            >
+              >
+            </button>
           </div>
         </div>
       </section>
